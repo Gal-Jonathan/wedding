@@ -284,12 +284,16 @@ function closeModal(){
     modalBodyElement.innerHTML = '';
     modal.style.visibility = 'hidden';
 }
+setTimeout(()=>{
+    document.getElementsByClassName('mainPage')[0].style.visibility = 'visible'
+}, 600)
+
 </script>
   </head>
  <body style="">
- <div class="mainPage">
+ <div style="visibility: hidden" class="mainPage">
   <div class= "containerOurImg" style="">
-    <img class="ourImg" src="assets/weImage.png">
+    <img style="visibility: hidden" class="ourImg" src="assets/weImage.png">
 
   </div>
   <div class="containerBtn" id="cntBtn">
