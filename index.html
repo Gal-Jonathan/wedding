@@ -214,9 +214,12 @@ function renderWhatToBring(contentObj){
                if (index == 0) {
            const link = document.createElement("a");
                  link.href = "https://drive.google.com/file/d/1FmvfN5voEN3bmZx57MV1TnufnLgOzE7D/view?usp=sharing";
-            divContent.appendChild(link);
-        }
+                 link.textContent = divContent;
+            row.appendChild(link);
+        }else{
                  row.appendChild(divContent);
+
+               }
         row.appendChild(input);
 
         const modalBodyElement = window.document.getElementById('modalBody');
