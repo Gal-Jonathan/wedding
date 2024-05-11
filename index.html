@@ -196,13 +196,13 @@ function renderWhatToBring(contentObj){
     const nodeHeader = document.createTextNode(header);
     modalHeaderElement.appendChild(nodeHeader);
 
-    body.forEach((whatToBring)=>{
+    body.forEach((whatToBring, index)=>{
         const row = window.document.createElement('div');
         row.className = 'row';
         const input = window.document.createElement('input');
         input.type = 'checkbox';
 
-
+        
 
         const divContent = window.document.createElement('div');
         divContent.className = 'contentRow';
@@ -211,7 +211,15 @@ function renderWhatToBring(contentObj){
         input.style = 'width: 4vw';
 
         divContent.appendChild(nodeContent);
-        row.appendChild(divContent);
+               if (index == 0) {
+           const link = document.createElement("a");
+                 link.href = "https://drive.google.com/file/d/1FmvfN5voEN3bmZx57MV1TnufnLgOzE7D/view?usp=sharing";
+
+            link.appendChild(divContent);
+                 row.appendChild(link);
+        }else{
+                         row.appendChild(divContent);
+              }
         row.appendChild(input);
 
         const modalBodyElement = window.document.getElementById('modalBody');
